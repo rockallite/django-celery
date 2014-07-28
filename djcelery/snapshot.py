@@ -3,6 +3,10 @@ from __future__ import absolute_import, unicode_literals
 from collections import defaultdict
 from datetime import datetime, timedelta
 
+import django
+if hasattr(django, 'setup'):
+    # For Django 1.7+
+    django.setup()
 from django.conf import settings
 
 from celery import states
